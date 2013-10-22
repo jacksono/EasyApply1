@@ -1,0 +1,9 @@
+<h3>ERROR!</h3> <!-- page is dispalyed if save is unsuccessful-->
+<% if @student.errors.full_messages.any? %> <!--checks for all error msgs from the validations-->
+<% @student.errors.full_messages.each do |error_message| %>
+<%= error_message if @student.errors.full_messages.first == error_message %><br /> <!--displays default error msgs one at a time from the topmost error-->
+<% end %>
+<% end %>
+<%= link_to 'Create Account', {:action => 'new'}%>|  <!--hyperlinks to new, list and home-->
+<%= link_to 'Index', {:action => 'list'} %>
+|<%= link_to "Home Page", {:action => 'home' }%>

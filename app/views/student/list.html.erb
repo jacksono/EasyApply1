@@ -1,0 +1,12 @@
+<% if @students.blank? %> <!-- checks if there are any users saved in the db-->
+<p><h3>There aren't any users registered.</h3></p> <!-- is displayed if there arent any users-->
+<% else %>
+<p><h3>These are the current registered users:</h3></p>
+<ol id="students">
+<% @students.each do |c| %><!-- extracts list of users already saved in the db and lists them in a numbered list showing the email address only-->
+<li><%= c.email_address -%></li>
+<% end %>
+</ol>
+<% end %>
+<%= link_to "Create Account", {:action => 'new' }%><!--hyperlinks to new and home-->
+| <%= link_to "Home Page", {:action => 'home' }%>

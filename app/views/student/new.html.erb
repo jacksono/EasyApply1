@@ -1,0 +1,15 @@
+<h1>CREATE NEW ACCOUNT</h1> <!-- form having all the fields to be filled ny new user-->
+<%= form_tag :action => 'create' %>
+<p><label for="student_first_name">FIRST NAME</label>:
+<%= text_field 'student', 'first_name' %></p>
+<p><label for="student_last_name">LAST NAME</label>:
+<%= text_field 'student', 'last_name' %></p>
+<p><label for="student_email_address">EMAIL</label>:
+<%= text_field 'student', 'email_address' %></p>
+<p><label for="student_password">Password</label>:
+<%= password_field 'student', 'password' %></p>
+<p><label for="student_confirm_password">Confirm Password</label>:
+<%= password_field 'student', 'confirm_password' %></p>
+<%= submit_tag "Submit" %>
+<br><%= link_to 'Index', {:action => 'list'} %> <!-- hyperlinks to list and home-->
+ |<%= link_to 'Home Page', {:action => 'home'} %>
